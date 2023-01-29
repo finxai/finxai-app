@@ -16,8 +16,6 @@ class AdminSeederTable extends Seeder
      */
     public function run()
     {
-
-        Log::debug();
         $admins = [
             [
                 'name' => 'John Doe',
