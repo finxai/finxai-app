@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+
+      - name: Install Composer Dependencies
+
+        run: |
+          export COMPOSER_HOME="$HOME/.config/composer";
+          composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
+      - name: Install NPM Dependencies
+        run: npm install
+
+      - name: List files
+        run: ls
+
+      - name: 'Create env file'
+        run: |
+          touch .env
+
+          echo APP_NAME="FinXai" >> .env
+          echo APP_ENV=local >> .env
+          echo APP_KEY=  >> .env
+          echo APP_DEBUG=true >> .env
+          echo APP_URL=https://finxai.com >> .env
+
+          echo LOG_CHANNEL=stack >> .env
+
+          echo DB_CONNECTION=mysql >> .env
+          echo DB_HOST=127.0.0.1 >> .env
+          echo DB_PORT=3306 >> .env
+          echo DB_DATABASE=finxai >> .env
+          echo DB_USERNAME=superuser >> .env
+          echo DB_PASSWORD=JKP.gh1618?a1 >> .env
+
+          echo BROADCAST_DRIVER=log >> .env
+          echo CACHE_DRIVER=file >> .env
+          echo QUEUE_CONNECTION=sync >> .env
+          echo SESSION_DRIVER=file >> .env
+          echo SESSION_LIFETIME=120 >> .env
+
+          echo REDIS_HOST=127.0.0.1 >> .env
+          echo REDIS_PASSWORD=null >> .env
+          echo REDIS_PORT=6379 >> .env
+
+          echo MAIL_MAILER=smtp >> .env
+          echo MAIL_HOST=smtp.mailtrap.io >> .env
+          echo MAIL_PORT=2525 >> .env
+          echo MAIL_USERNAME=null >> .env
+          echo MAIL_PASSWORD=null >> .env
+          echo MAIL_ENCRYPTION=null >> .env
+          echo MAIL_FROM_ADDRESS=null >> .env
+          echo MAIL_FROM_NAME="${APP_NAME}" >> .env
+
+          echo AWS_ACCESS_KEY_ID= >> .env
+          echo AWS_SECRET_ACCESS_KEY= >> .env
+          echo AWS_DEFAULT_REGION=us-east-1 >> .env
+          echo AWS_BUCKET= >> .env
+
+          echo PUSHER_APP_ID= >> .env
+          echo PUSHER_APP_KEY= >> .env
+          echo PUSHER_APP_SECRET= >> .env
+          echo PUSHER_APP_CLUSTER=mt1 >> .env
+
+          cat .env
+      - name: Generate Key
+        run: php artisan key:generate
+
+      - name: Run migration
+        run: php artisan migrate --force
