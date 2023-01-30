@@ -1,0 +1,243 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');*/
+@import url('https://fonts.googleapis.com/css?family=Unbounded');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'Inter';
+    /*font-family: 'Unbounded';*/
+    /*font-family: 'Unbounded', cursive;*/
+}
+
+a:hover,button:hover { text-decoration:none; color: inherit; }
+
+a:hover, button:hover{
+    /*display: none;*/
+}
+
+.btn-outline {
+    @apply uppercase;
+    background: transparent;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 11px 30px;
+}
+
+.btn {
+    @apply uppercase;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 11px 30px;
+}
+
+/*  */
+
+body.auth {
+    @apply flex w-full h-full justify-center items-center bg-dark;
+    /* background: #1e1e1e; */
+}
+
+section.auth-bg {
+    @apply flex h-full justify-center items-center;
+    /* width: 1000px !important; */
+}
+
+div.auth-bg {
+    @apply flex flex-col w-full;
+    padding-top: 40px;
+    row-gap: 76px;
+
+    /* max-width: 1000px; */
+}
+
+body.auth div.header {
+    @apply flex justify-between w-full items-center;
+}
+
+body.auth .header-logo {
+    @apply flex justify-center items-center;
+}
+
+body.auth .logo-image {
+    width: 50px;
+    height: 50px;
+    background: #d9d9d9;
+}
+
+body.auth .header-title {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 46px;
+    color: #ffffff;
+}
+
+.header-links {
+    @apply flex justify-center items-center;
+}
+
+.header-links .btn-outline {
+    color: #f5f5f5;
+    border: 1px solid #0bbdc8;
+}
+
+section.auth-form {
+    @apply bg-silver relative;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    z-index: 100px;
+}
+
+section.auth-form .bg-image-right {
+    @apply absolute;
+    top: -70px;
+    right: -225px;
+    z-index: -100;
+    /* background: radial-gradient(
+      37.31% 37.31% at 50% 50%,
+      #0bbdc8 0%,
+      rgba(0, 0, 0, 0) 100%
+    ); */
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+}
+
+section.auth-form .bg-image-left {
+    @apply absolute;
+    top: 12%;
+    left: -220px;
+    z-index: -100;
+}
+
+@media only screen and (max-width: 1378px) {
+    section.auth-form .bg-image-left {
+        width: 40%;
+    }
+    section.auth-form .bg-image-right {
+        width: 40%;
+    }
+}
+
+form.auth-form {
+    @apply flex flex-col w-full;
+    padding: 50px;
+}
+
+.form-title {
+    align-self: start;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 118.5%;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 25px;
+
+}
+
+form.auth-form.login .form-title{
+    margin-bottom:5px;
+}
+.form-content {
+    @apply flex w-full justify-between;
+    column-gap: 50px;
+}
+
+.form-fields {
+    @apply flex flex-col justify-center items-center;
+    row-gap: 20px;
+}
+
+.group-form {
+    @apply flex flex-col;
+    row-gap: 5px;
+}
+
+.group-form label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    margin-bottom: 0 !important;
+}
+
+.group-form .form-control {
+    background: #f5f5f5;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    width: 360px;
+    height: 50px;
+}
+*,
+::before,
+::after {
+}
+
+input.form-control:focus,
+input.form-control:active,
+input.form-control:hover {
+    /* @apply border border-solid border-primary; */
+    border: 1px solid #0bbdc8 !important;
+}
+
+.form-cta {
+    @apply flex flex-col justify-center items-center;
+    background: #0bbdc8;
+    border: 1px solid #000000;
+    border-radius: 12px;
+    color: white;
+    row-gap: 40px;
+    padding: 190px 60px 144px 60px;
+}
+
+.cta-titles {
+    @apply flex flex-col justify-center items-center;
+    row-gap: 10px;
+}
+
+.cta-titles h1 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.cta-titles p {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.cta-action {
+    @apply flex flex-col justify-center items-center;
+    row-gap: 10px;
+}
+
+.cta-action p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.54);
+}
+
+.cta-action a {
+    border: 1px solid white;
+    padding: 11px 40px;
+}
+
+div.submit{
+    align-self: start;
+}
+
+button.submit {
+    margin-top: 20px;
+    background: #0bbdc8;
+    border: 1px solid #000000;
+    border-radius: 47px;
+    color: white;
+    padding: 14px 16px;
+}
