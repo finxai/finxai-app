@@ -12247,3 +12247,13 @@ section#footer {
     width: 1141px;
 }
 
+
+
+.form-control.is-invalid {
+    border-color: #e3342f !important;
+}
+ .invalid-feedback{
+    font-size: 14px !important;
+    font-family: 'Inter' !important;
+}
+
