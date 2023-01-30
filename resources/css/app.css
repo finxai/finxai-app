@@ -241,3 +241,8 @@ button.submit {
     color: white;
     padding: 14px 16px;
 }
+
+form.auth-form.login button.submit {
+    margin-top: 5px;
+    padding: 14px 38px;
+}
