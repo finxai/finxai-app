@@ -13,8 +13,6 @@ from sqlalchemy import create_engine
 import bs4 as bs
 import requests
 from alpha_vantage.timeseries import TimeSeries
-import seaborn as sns
-sns.set()
 
 engine = create_engine('mysql+pymysql://root:xxx@localhost:3000', echo=False)  # root and port have been changed
 db1 = engine.raw_connection()
