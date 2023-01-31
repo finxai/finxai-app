@@ -11615,9 +11615,21 @@ body.auth div.header{
 }
 
 .logo-image {
-    width: 50px;
-    height: 50px;
-    background: #d9d9d9;
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*background: #d9d9d9;*/
+    width: 91px;
+    height: 30px;
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 118.5%;
+    color: #FFFFFF;
+}
+
+.logo-image span{
+    color: #0BBDC8;
 }
 
 body.auth .header-title {
