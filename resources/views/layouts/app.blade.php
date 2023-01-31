@@ -15,7 +15,8 @@
     <div class="auth-bg">
         <div class="header">
             <div class="header-logo">
-                <div class="logo-image"></div>
+                <div class="logo-image">finX<span>ai</span></div>
+{{--                <img  src="{{asset('img/logo.svg')}}" alt="Logo">--}}
             </div>
             <h2 class="header-title">Portfolio Analysis</h2>
             <div class="header-links">

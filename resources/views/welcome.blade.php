@@ -13,7 +13,8 @@
     <div class="header">
         <nav class="nav">
             <div class="header-logo">
-                <div class="logo-image"></div>
+                <div class="logo-image">finX<span>ai</span></div>
+{{--                <div class="logo-image"></div>--}}
             </div>
             <ul class="header-links">
                 <li><a href="#about">about us</a></li>
@@ -166,7 +167,8 @@
 <section id="footer">
     <footer class="footer">
         <div class="header-logo">
-            <div class="logo-image"></div>
+            <div class="logo-image">finX<span>ai</span></div>
+{{--            <div class="logo-image"></div>--}}
         </div>
         <ul class="header-links">
             <li><a href="#about">about us</a></li>
