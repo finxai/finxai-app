@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set()
 
-engine = create_engine('mysql+pymysql://root:ehm3@localhost:3306', echo=False)
+engine = create_engine('mysql+pymysql://root:xxx@localhost:3xxx', echo=False)
 db1 = engine.raw_connection()
 
 # Loading Pricing Data
@@ -185,3 +185,5 @@ cc = plt.Circle((0, 0), 0.75, color='black', fc='white', linewidth=1.25)
 fig = plt.gcf()
 _ = fig.gca().add_artist(cc)
 plt.show()
+
+db1.close()
