@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+Route::get('/result', function () {
+    return view('result');
+})->name('result');
+
 Route::get('/logout', function () {
     auth()->logout();
     return view('welcome');
