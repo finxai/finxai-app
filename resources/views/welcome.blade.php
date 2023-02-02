@@ -30,8 +30,7 @@
                 <img src="{{asset('img/rec-bg-img.png')}}" class="header-cta-bg"/>
             </h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur. Magna laoreet vitae morbi ac
-                libero tincidunt nam. Proin euismod adipiscing nisi.
+                Invest Smartly with FinxAI: AI Powered Investment Solutions
             </p>
             <a href="{{route('login')}}">Try now</a>
         </div>
@@ -42,19 +41,14 @@
         <div class="about-content">
             <div class="about-title">
                 <h2>about us</h2>
-                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+                <h1>The power of AI to make smart decisions.</h1>
             </div>
             <div class="about-desc">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur. Venenatis ultricies tellus
-                    amet nunc risus facilisis. Id adipiscing duis morbi pharetra sit.
-                    Dui amet morbi aliquam montes dolor lacus pharetra. Commodo amet
-                    eu ultricies quam. Vitae tincidunt aliquam amet morbi. Hac dis
-                    eget egestas duis.
+                    Firms acquire assets and invest in the stock market depending on their goals. To manage their investment portfolios, they have to hire expert individuals and people who are paid more.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur. Venenatis ultricies tellus
-                    amet nunc risus facilisis. Id adipiscing duis morbi pharetra sit.
+                    A web based site that collects, analyses stock data from real world and predicts and optimizes for your investment using portfolio analysis. It allows users to invest smartly and help them achieve their financial goals.
                 </p>
                 <div>
                     <a class="btn" {{route('login')}}>Try now</a>
@@ -67,18 +61,17 @@
             <h1>What we provide</h1>
             <div class="services-list">
                 <div class="">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <h3>TIME</h3>
+                    <p>It helps to reduce costs and save time.</p>
                 </div>
                 <div class="">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    <h3>Understanding the market</h3>
+                    <p>It provides a better understanding of the stock market and help to make better decisions that will lead to better returns.</p>
                 </div>
                 <div class="">
-                    <h3>Lorem ipsum</h3>
+                    <h3>manage investments</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit
-                        amet consectetur.Lorem ipsum dolor sit amet consectetur.
+                        Our product provides an automated platform for users to manage their investment portfolios and help them make wise decisions.
                     </p>
                 </div>
             </div>
