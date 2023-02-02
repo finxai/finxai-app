@@ -1,23 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <form class="profile-form" method="POST">
 
-                    {{ __('You are logged in!') }}
-                </div>
+        <div class="profile-header">
+            <h2>Welcome!</h2>
+            <p class="desc">Give us more details so we can calculate the risk profile algo.</p>
+            <p class="message">Upload only CSV files</p>
+        </div>
+
+        <div class="profile-form">
+            <div class="group-form">
+                <label for="">Cash flow</label>
+            </div>
+            <div class="group-form">
+                <label for="">Balance Sheet</label>
+            </div>
+            <div class="group-form">
+                <label for="">Incoming statement</label>
+            </div>
+            <div class="group-form">
+                <label for="">Recent press release, news, articles*</label>
             </div>
         </div>
-    </div>
-</div>
+
+        <div class="profile-footer">
+            <button class="btn">Create Analysis</button>
+        </div>
+
+    </form>
+
 @endsection
