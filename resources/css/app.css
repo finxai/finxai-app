@@ -57,6 +57,7 @@ div.auth-bg {
 
 body.auth div.header {
     @apply flex justify-between w-full items-center;
+    min-width: 800px;
 }
 
 .header-logo {
@@ -163,7 +164,7 @@ form.auth-form.login .form-title{
 
 .group-form label {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 19px;
     color: #000000;
     font-family: 'Inter';
@@ -644,4 +645,277 @@ section#footer {
  .invalid-feedback{
     font-size: 14px !important;
     font-family: 'Inter' !important;
+}
+
+
+.profile-header{
+    @apply flex flex-col justify-center items-center;
+}
+
+.profile-form{
+    padding: 30px;
+}
+
+.profile-header h2{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 118.5%;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+.profile-header p.desc{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+    margin-bottom: 15px;
+
+}
+
+.profile-header p.message{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: #0BBDC8;
+}
+
+.profile-footer{
+    @apply flex flex-col justify-center items-center;
+}
+
+.profile-footer button{
+    background: #0BBDC8;
+    border: 1px solid #000000;
+    border-radius: 47px;
+    color: white;
+}
+
+body.result{
+    @apply flex w-full;
+}
+
+section.results{
+    @apply flex w-full;
+}
+
+.results .left{
+    @apply flex flex-col bg-dark;
+    width: 31%;
+    padding: 30px 50px;
+}
+
+.results .header-logo{
+    @apply justify-start;
+}
+
+div.account{
+    margin-top: 31px;
+    background: #F5F5F5;
+    border: 1px solid #FFFFFF;
+    border-radius: 7px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.account-pic img{
+    background: #F5F5F5;
+    border: 1px solid #000000;
+    border-radius: 100%;
+}
+
+.info{
+    @apply flex flex-col;
+    margin-top: 12px;
+    row-gap: 5px;
+}
+
+.info-item{
+    @apply flex justify-between items-center;
+}
+
+.info-item h4{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    color: #0A0A0A;
+}
+
+.info-item:first-child h5{
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 16px;
+    color: #0A0A0A;
+}
+
+
+.info-item:nth-child(2) h5{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #0BBDC8;
+}
+
+.details-box{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px 30px 30px 30px;
+}
+
+.details-header{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.details-items{
+    @apply flex flex-col;
+    row-gap: 13px;
+}
+
+.details-item{
+    @apply flex justify-between items-center;
+}
+
+.details-item h5{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 109.52%;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.details-item h6{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #0BBDC8;
+}
+
+.details-new a{
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #0BBDC8;
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    color: white;
+}
+
+div.logout{
+    margin-top: 30px;
+}
+
+a.logout{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 118.5%;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.results .right{
+    @apply flex flex-col;
+    width: 69%;
+    background-color: #F5F5F5;
+    padding: 25px 50px;
+}
+
+div.top{
+    @apply flex justify-between items-center;
+    margin-bottom: 24px;
+}
+
+div.top h3{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+}
+
+div.top a{
+    font-weight: 700;
+    color: #000000;
+    border: 1px solid #0BBDC8;
+    border-radius: 24px;
+    padding: 11px 34px;
+}
+
+div.result-inputs{
+    @apply flex;
+    column-gap: 18px;
+}
+
+div.trading-bots{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 118.5%;
+    color: #000000;
+}
+
+div.trading-bots span{
+    color:  #0BBDC8;
+
+}
+
+div.risk-profile{
+    @apply flex flex-col;
+    row-gap: 10px;
+}
+
+div.risk-profile label{
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 118.5%;
+    text-transform: uppercase;
+    color: #000000;
+
+}
+
+div.risk-profile select{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    width: 335px;
+    height: 40px;
+    padding-left: 5px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+
+div.charts{
+    margin-top: 20px;
+    @apply flex;
+    column-gap: 18px;
+}
+
+div.charts div{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    height: 350px;
+}
+
+div.charts div:first-child{
+    width: 45%;
+}
+div.charts div:nth-child(2){
+    width: 55%;
+}
+
+
+div.charts2{
+    border-radius: 7px;
+    margin-top: 20px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    height: 430px;
 }

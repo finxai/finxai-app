@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form class="profile-form" method="POST">
+    <form class="profile-form" method="POST" action="{{ route('login') }}">
 
         <div class="profile-header">
             <h2>Welcome!</h2>

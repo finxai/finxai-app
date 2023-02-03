@@ -80,7 +80,7 @@ jobs:
         run: php artisan key:generate
 
       - name: Run migration
-        run: php artisan migrate:fresh --force
+        run: php artisan migrate --force
 
       - name: Run migration
         run: php artisan db:seed --force

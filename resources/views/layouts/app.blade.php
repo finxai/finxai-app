@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Tailwind Starter</title>
+    <title>FinXAi</title>
     <title>{{ config('app.name', 'Laravel') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
@@ -19,8 +19,8 @@
 {{--                <img  src="{{asset('img/logo.svg')}}" alt="Logo">--}}
             </div>
             <h2 class="header-title">Portfolio Analysis</h2>
-            <div class="header-links">
-                <a class="btn-outline" href="{{route('welcome')}}">About Us</a>
+            <div class="header-links">w
+                <a class="btn-outline" href="{{url("/#about")}}">About Us</a>
             </div>
         </div>
         <section class="auth-form">
