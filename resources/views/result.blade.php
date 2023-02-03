@@ -104,7 +104,7 @@
             </div>
 
             <div class="details-new">
-                <a href="{{url('profile')}}" class="btn">Upload New Data</a>
+                <a href="{{route('home')}}" class="btn">Upload New Data</a>
             </div>
 
             <div class="logout">
