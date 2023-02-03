@@ -94,7 +94,7 @@
                 </div>
                 <div class="member-titles">
                     <h3>Edgar Hernandez Moto</h3>
-                    <p>CEO in SEDLAXAR Technologies</p>
+                    <p>Economist and Dats Scientist</p>
                 </div>
             </div>
             <div class="team-member">
