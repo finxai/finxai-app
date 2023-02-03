@@ -90,7 +90,7 @@
         <div class="team-members">
             <div class="team-member">
                 <div class="member-pic">
-                    <div class="member-img"></div>
+                    <img src="{{asset('img/edgar.png')}}" class="member-img"></img>
                 </div>
                 <div class="member-titles">
                     <h3>Edgar Hernandez Moto</h3>
@@ -99,7 +99,7 @@
             </div>
             <div class="team-member">
                 <div class="member-pic">
-                    <div class="member-img"></div>
+                    <img src="{{asset('img/ali.png')}}" class="member-img"></img>
                 </div>
                 <div class="member-titles">
                     <h3>Asad Ali</h3>
@@ -108,7 +108,7 @@
             </div>
             <div class="team-member">
                 <div class="member-pic">
-                    <div class="member-img"></div>
+                    <img src="{{asset('img/abdul.png')}}" class="member-img"></img>
                 </div>
                 <div class="member-titles">
                     <h3>AbdulQudus Yunus</h3>
@@ -117,7 +117,7 @@
             </div>
             <div class="team-member">
                 <div class="member-pic">
-                    <div class="member-img"></div>
+                    <img src="{{asset('img/huzaifa.png')}}" class="member-img"></img>
                 </div>
                 <div class="member-titles">
                     <h3>Huzaifa Zahoor</h3>
@@ -126,7 +126,7 @@
             </div>
             <div class="team-member">
                 <div class="member-pic">
-                    <div class="member-img"></div>
+                    <img src="{{asset('img/rayyan.png')}}" class="member-img"></img>
                 </div>
                 <div class="member-titles">
                     <h3>Mohammed Ryayyan uddin</h3>
@@ -135,7 +135,7 @@
             </div>
             <div class="team-member">
                 <div class="member-pic">
-                    <div class="member-img"></div>
+                    <img src="{{asset('img/ness.png')}}" class="member-img"></img>
                 </div>
                 <div class="member-titles">
                     <h3>Anastasiya Viachorka</h3>
