@@ -18,7 +18,7 @@
 {{--                <img  src="{{asset('img/logo.svg')}}" alt="Logo">--}}
             </div>
             <h2 class="header-title">Portfolio Analysis</h2>
-            <div class="header-links">w
+            <div class="header-links">
                 <a class="btn-outline" href="{{url("/#about")}}">About Us</a>
             </div>
         </div>
