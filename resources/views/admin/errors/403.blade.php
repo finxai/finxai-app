@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>403 &mdash; Stisla</title>
+    <title>403 &mdash; FinXai</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}" >
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="simple-footer mt-5">
-                Copyright &copy; Stisla 2018
+                Copyright &copy; FinXai 2018
             </div>
         </div>
     </section>
