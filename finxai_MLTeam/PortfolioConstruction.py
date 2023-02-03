@@ -5,15 +5,15 @@ from scipy.optimize import minimize
 from sqlalchemy import create_engine
 import matplotlib.pyplot as plt
 import seaborn as sns
+import requests
 sns.set()
 
-engine = create_engine('mysql+pymysql://root:xxx@localhost:3xxx', echo=False)
+engine = create_engine('mysql+pymysql://root:xxx@localhost:3306', echo=False)
 db1 = engine.raw_connection()
 
 # Loading Pricing Data
 querry_ins = "SELECT * FROM finxai_hist_price.instrument_universe"
 instrument_universe = pd.read_sql(querry_ins, con=engine, index_col='date')
-
 
 def get_riskadj_tickers(risk_profile):
     """
@@ -149,9 +149,11 @@ portfolio_user_rts = np.log(portfolio_user.div(portfolio_user.shift(1))).dropna(
 correl_port = portfolio_user_rts.corr()
 _ = sns.heatmap(correl_port, cmap='jet')
 _ = plt.title('Portfolio Correlation Matrix', fontsize=20)
+_ = plt.savefig('E:/Users/Edgar/Documents/Python2/Cohere_hackathon/corr_matrix.png')
 
 # Performing analysis and allocating weights
 port_ann_rts = annualize_rets(portfolio_user_rts.resample('M').last(), 12)
+# port_weights = gmv(portfolio_user_rts.cov(), riskfree)
 port_weights = capm_weights(portfolio_user_rts.resample('M').last(), riskfree, 12)
 port_weights = pd.DataFrame(port_weights).T
 port_weights.columns = portfolio_user_rts.columns
@@ -165,10 +167,13 @@ _ = plt.xlabel('Period', fontsize=16)
 _ = plt.ylabel('Wealth Index', fontsize=16)
 _ = plt.title('Portfolio Performance', fontsize=20)
 plt.show()
+plt.savefig('E:/Users/Edgar/Documents/Python2/Cohere_hackathon/wlth_index.png')
+
 
 # Generating the Pie Chart of Portfolio Asset Allocation
 df_transit = port_weights.T
 df_transit = df_transit[df_transit.values > 0.009]
+
 weig_vals = []
 for i in df_transit.values:
     weig_vals.append(i[0])
@@ -185,5 +190,34 @@ cc = plt.Circle((0, 0), 0.75, color='black', fc='white', linewidth=1.25)
 fig = plt.gcf()
 _ = fig.gca().add_artist(cc)
 plt.show()
+plt.savefig('E:/Users/Edgar/Documents/Python2/Cohere_hackathon/port_weights.png')
 
 db1.close()
+
+# Post API for stock universe
+url = "https://api.finxai.com/portfolio/update"
+
+for i in instrument_universe:
+    interm_dataf = pd.DataFrame(instrument_universe[i])
+    for lab, row in interm_dataf.iterrows():
+        myobj = {
+            "date": str(lab),
+            "instrument_universe": row.values[0],
+            "ticker": i
+        }
+        r = requests.post(url, data=myobj)
+        pastebin_url = r.text
+        print("The pastebin URL is:%s" % pastebin_url)
+        """try:
+            
+        except:
+            print("There was an issue with:%s " % row.index)"""
+
+
+for i in instrument_universe.iloc[:5, :3]:
+    interm_dataf = pd.DataFrame(instrument_universe[:5][i])
+    for lab, row in interm_dataf.iterrows():
+        print(row.values[0])
+
+
+
