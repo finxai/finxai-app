@@ -27,7 +27,7 @@ class RedirectIfAuthenticated
 
                     default;
 
-                        return redirect('/');
+                        return redirect('/result');
 
                 }
 

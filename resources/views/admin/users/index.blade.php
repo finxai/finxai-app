@@ -39,6 +39,9 @@
                                 <th>No</th>
                                 <th>User Name</th>
                                 <th>Email</th>
+                                <th>Investment amount</th>
+                                <th>Location</th>
+                                <th>Company ID</th>
                                 <th>Created at</th>
                                 <th>Delete</th>
                             </tr>
@@ -50,6 +53,9 @@
                                         <td>{{$user->id}}</td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email }}</td>
+                                        <td>{{$user->investment_amount }}</td>
+                                        <td>{{$user->location }}</td>
+                                        <td>{{$user->register_company_id }}</td>
                                         <td>{{$user->created_at->diffForHumans()}}</td>
                                         <td>
 
@@ -76,6 +82,9 @@
                                 <th>No</th>
                                 <th>User Name</th>
                                 <th>Email</th>
+                                <th>Investment amount</th>
+                                <th>Location</th>
+                                <th>Company ID</th>
                                 <th>Created at</th>
                                 <th>Delete</th>
 

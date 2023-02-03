@@ -13,20 +13,24 @@
         <div class="profile-form">
             <div class="group-form">
                 <label for="">Cash flow</label>
+                <dropzone ></dropzone>
             </div>
             <div class="group-form">
                 <label for="">Balance Sheet</label>
+                <dropzone ></dropzone>
             </div>
             <div class="group-form">
                 <label for="">Incoming statement</label>
+                <dropzone ></dropzone>
             </div>
             <div class="group-form">
                 <label for="">Recent press release, news, articles*</label>
+                <dropzone ></dropzone>
             </div>
         </div>
 
         <div class="profile-footer">
-            <button class="btn">Create Analysis</button>
+            <a href="{{url('/result')}}" class="btn">Create Analysis</a>
         </div>
 
     </form>

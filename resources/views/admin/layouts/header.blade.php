@@ -60,7 +60,7 @@
                             <i class="fas fa-bell"></i>
                         </div>
                         <div class="dropdown-item-desc">
-                            Welcome to Stisla template!
+                            Welcome to FinXai template!
                             <div class="time">Yesterday</div>
                         </div>
                     </a>

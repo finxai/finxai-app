@@ -26,7 +26,7 @@
 
         <div class="header-cta">
 
-            <h1>Firms Portfolio Construction and Analysis
+            <h1>Firms' Portfolio Construction and Analysis
                 <img src="{{asset('img/rec-bg-img.png')}}" class="header-cta-bg"/>
             </h1>
             <p>
@@ -84,8 +84,7 @@
         <div class="team-titles">
             <h3>OUR TEAM</h3>
             <p>
-                Lorem ipsum dolor sit amet consectetur. Venenatis ultricies tellus
-                amet nunc risus facilisis. Id adipiscing duis morbi pharetra sit.
+                We are a talented group from different countries and continents came together to collaborate on a challenging project.
             </p>
         </div>
         <div class="team-members">
@@ -95,7 +94,7 @@
                 </div>
                 <div class="member-titles">
                     <h3>Edgar Hernandez Moto</h3>
-                    <p>CEO in SEDLAXAR Technologies</p>
+                    <p>Economist and Dats Scientist</p>
                 </div>
             </div>
             <div class="team-member">

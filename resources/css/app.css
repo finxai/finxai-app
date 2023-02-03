@@ -682,11 +682,19 @@ section#footer {
     color: #0BBDC8;
 }
 
+.profile-form .group-form label{
+    margin-bottom: 5px !important;
+}
+
+.profile-form .group-form{
+    margin-bottom: 22px;
+}
+
 .profile-footer{
     @apply flex flex-col justify-center items-center;
 }
 
-.profile-footer button{
+.profile-footer a{
     background: #0BBDC8;
     border: 1px solid #000000;
     border-radius: 47px;
@@ -913,9 +921,15 @@ div.charts div:nth-child(2){
 
 
 div.charts2{
+    @apply flex justify-center items-center;
     border-radius: 7px;
     margin-top: 20px;
     background: #FFFFFF;
     border: 1px solid #000000;
     height: 430px;
+}
+
+.charts2 img{
+    height: 400px;
+    width: 100%;
 }
