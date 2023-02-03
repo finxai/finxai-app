@@ -15,7 +15,7 @@ export default {
         return {
             dropzoneOptions: {
                 url: 'https://httpbin.org/post',
-                thumbnailWidth: 100,
+                thumbnailWidth: 150,
                 maxFilesize: 0.5,
                 headers: { "My-Awesome-Header": "header value" }
             }
@@ -27,6 +27,6 @@ export default {
 <style>
 
 .dropzone{
-    height: 45px;
+    /*height: 45px;*/
 }
 </style>
