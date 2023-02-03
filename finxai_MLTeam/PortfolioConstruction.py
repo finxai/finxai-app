@@ -8,12 +8,13 @@ import seaborn as sns
 import requests
 sns.set()
 
-engine = create_engine('mysql+pymysql://root:xxx@localhost:3306', echo=False)
+engine = create_engine('mysql+pymysql://root:xxx@localhost:xxxx', echo=False)
 db1 = engine.raw_connection()
 
 # Loading Pricing Data
 querry_ins = "SELECT * FROM finxai_hist_price.instrument_universe"
 instrument_universe = pd.read_sql(querry_ins, con=engine, index_col='date')
+
 
 def get_riskadj_tickers(risk_profile):
     """
@@ -78,14 +79,14 @@ def sharpe_ratio(r, riskfree_rate, periods_per_year):
 
 def portfolio_return(weights, returns):
     """
-    Computes the return on a portfolio from constituent returns and weights
+    Computes the return on a portfolio from constituent returns and
     weights are a numpy array or 1 x N matrix and returns are a numpy array or NxN matrix
     """
     return weights.T @ returns
 
 def portfolio_vol(weights, covmat):
     """
-    Computes the volatility of a portfolio from a covariance matrix and constituent weights
+    Computes the volatility of a portfolio from a covariance matrix and constituent
     weights are a numpy array or N x 1 maxtrix and covmat is an N x N matrix
     """
     return (weights.T @ covmat @ weights) ** 0.5
@@ -149,11 +150,10 @@ portfolio_user_rts = np.log(portfolio_user.div(portfolio_user.shift(1))).dropna(
 correl_port = portfolio_user_rts.corr()
 _ = sns.heatmap(correl_port, cmap='jet')
 _ = plt.title('Portfolio Correlation Matrix', fontsize=20)
-_ = plt.savefig('E:/Users/Edgar/Documents/Python2/Cohere_hackathon/corr_matrix.png')
+_ = plt.savefig('corr_matrix.png')
 
 # Performing analysis and allocating weights
 port_ann_rts = annualize_rets(portfolio_user_rts.resample('M').last(), 12)
-# port_weights = gmv(portfolio_user_rts.cov(), riskfree)
 port_weights = capm_weights(portfolio_user_rts.resample('M').last(), riskfree, 12)
 port_weights = pd.DataFrame(port_weights).T
 port_weights.columns = portfolio_user_rts.columns
@@ -167,7 +167,7 @@ _ = plt.xlabel('Period', fontsize=16)
 _ = plt.ylabel('Wealth Index', fontsize=16)
 _ = plt.title('Portfolio Performance', fontsize=20)
 plt.show()
-plt.savefig('E:/Users/Edgar/Documents/Python2/Cohere_hackathon/wlth_index.png')
+plt.savefig('wlth_index.png')
 
 
 # Generating the Pie Chart of Portfolio Asset Allocation
@@ -190,34 +190,23 @@ cc = plt.Circle((0, 0), 0.75, color='black', fc='white', linewidth=1.25)
 fig = plt.gcf()
 _ = fig.gca().add_artist(cc)
 plt.show()
-plt.savefig('E:/Users/Edgar/Documents/Python2/Cohere_hackathon/port_weights.png')
-
-db1.close()
+plt.savefig('port_weights.png')
 
 # Post API for stock universe
 url = "https://api.finxai.com/portfolio/update"
+instrument_universe.index = instrument_universe.index.strftime("%Y-%m-%d")
 
-for i in instrument_universe:
+for i in instrument_universe.iloc[:, 2:]:
     interm_dataf = pd.DataFrame(instrument_universe[i])
     for lab, row in interm_dataf.iterrows():
         myobj = {
+            "ticker": i,
             "date": str(lab),
-            "instrument_universe": row.values[0],
-            "ticker": i
+            "instrument_universe": row.values[0]
         }
+        print(myobj)
         r = requests.post(url, data=myobj)
         pastebin_url = r.text
         print("The pastebin URL is:%s" % pastebin_url)
-        """try:
-            
-        except:
-            print("There was an issue with:%s " % row.index)"""
-
-
-for i in instrument_universe.iloc[:5, :3]:
-    interm_dataf = pd.DataFrame(instrument_universe[:5][i])
-    for lab, row in interm_dataf.iterrows():
-        print(row.values[0])
-
 
 
