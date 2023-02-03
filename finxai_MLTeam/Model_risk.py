@@ -15,8 +15,8 @@ import seaborn as sns
 from sklearn.cluster import KMeans
 sns.set()
 
-ALPACA_API_KEY = "PKRCVCNBHYKF5ZAWIAXH"
-ALPACA_API_SECRET = "VBJfDbBTSsJJUY9dhHqSaw6y3x3orwe7RdRRANPQ"
+ALPACA_API_KEY = "ALPACA_KEY"
+ALPACA_API_SECRET = "ALPACA_SECRET"
 trading_client = TradingClient(ALPACA_API_KEY, ALPACA_API_SECRET)
 search_params = GetAssetsRequest(asset_class=AssetClass.US_EQUITY)
 assets = trading_client.get_all_assets(search_params)
@@ -44,7 +44,7 @@ for i in extra_tickers:
 tickers_state = sp_tickers + chosen_tickers
 
 # ===========================================================
-engine = create_engine('mysql+pymysql://root:ehm3@localhost:3306', echo=False)  # root and port have been changed
+engine = create_engine('mysql+pymysql://root:xxx@localhost:3000', echo=False)  # root and port have been changed
 db1 = engine.raw_connection()
 querry_acc_lst = "SELECT * FROM finxai_hist_price.account_names"
 acc_lst = pd.read_sql(querry_acc_lst, con=engine)
@@ -174,6 +174,5 @@ data_x['solvency2'] = data_x.total_liabilities.div(data_x.total_assets)
 data_financ_stat = pd.concat([data_y.reset_index(), data_x], axis=1)
 data_financ_stat.to_sql(con=engine, name='finan_statements', index=False, if_exists='replace',
                            schema='finxai_hist_price')
-data_financ_stat.to_csv("E:/Users/Edgar/Documents/Python2/Cohere_hackathon/FinanStatements.csv")
 
 db1.close()
