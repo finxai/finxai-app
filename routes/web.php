@@ -23,7 +23,7 @@ Route::get('/profile', function () {
 
 Route::get('/result', function () {
     return view('result');
-})->name('result');
+})->middleware('auth:web')->name('result');
 
 Route::get('/logout', function () {
     auth()->logout();

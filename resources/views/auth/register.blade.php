@@ -11,7 +11,7 @@
             <div class="form-fields">
                 <div class="group-form">
                     <label for="">Company name</label>
-                    <input type="text" required name="name"  class="form-control  @error('name') is-invalid @enderror" />
+                    <input type="text" required name="name" value="{{ old('name') }}"  class="form-control  @error('name') is-invalid @enderror" />
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             {{ $message }}
@@ -20,7 +20,7 @@
                 </div>
                 <div class="group-form">
                     <label for="">Company email</label>
-                    <input type="email" required name="email"  class="form-control @error('email') is-invalid @enderror" />
+                    <input type="email" required name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" />
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             {{ $message }}
@@ -29,7 +29,7 @@
                 </div>
                 <div class="group-form">
                     <label for="">Investment amount</label>
-                    <input type="number" required name="investment_amount"  class="form-control @error('investment_amount') is-invalid @enderror" />
+                    <input type="number" required name="investment_amount" value="{{ old('investment_amount') }}"  class="form-control @error('investment_amount') is-invalid @enderror" />
                     @error('investment_amount')
                         <span class="invalid-feedback" role="alert">
                             {{ $message }}
@@ -38,7 +38,7 @@
                 </div>
                 <div class="group-form">
                     <label for="">Location</label>
-                    <input type="text" required name="location"  class="form-control @error('location') is-invalid @enderror" />
+                    <input type="text" required name="location" value="{{ old('location') }}"  class="form-control @error('location') is-invalid @enderror" />
                     @error('location')
                         <span class="invalid-feedback" role="alert">
                             {{ $message }}
@@ -47,7 +47,7 @@
                 </div>
                 <div class="group-form">
                     <label for="">ID registred company</label>
-                    <input type="text" required class="form-control @error('register_company_id') is-invalid @enderror" name="register_company_id" />
+                    <input type="text" required value="{{ old('register_company_id') }}" class="form-control @error('register_company_id') is-invalid @enderror" name="register_company_id" />
                     @error('register_company_id')
                     <span class="invalid-feedback" role="alert">
                             {{ $message }}

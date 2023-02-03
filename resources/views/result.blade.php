@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FinXAi - Result</title>
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="result">
 
-    <section class="results">
+    <section  id="app" class="results">
 
         <div class="left details">
 
@@ -136,11 +135,16 @@
             </div>
 
             <div class="charts">
-                <div></div>
-                <div></div>
+                <div>
+                    <img src="{{asset('img/graph2.jpeg')}}" alt="Logo">
+                </div>
+                <div>
+                    <img src="{{asset('img/graph3.jpeg')}}" alt="Logo">
+                </div>
             </div>
 
             <div class="charts2">
+                <img src="{{asset('img/graph1.jpeg')}}" alt="Logo">
             </div>
 
         </div>
@@ -148,4 +152,7 @@
 
 
 </body>
+
+<script src="{{asset('js/app.js')}}"></script>
+
 </html>
