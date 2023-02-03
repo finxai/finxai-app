@@ -122,7 +122,9 @@
 
             <div class="result-inputs">
                 <div class="trading-bots">
-                    <h5>Do you want to use <span>the trading bot?</span></h5>
+                    <h5 class="mb-2">Do you want to use <span>the trading bot?</span></h5>
+                    <input type="radio" id="contactChoice1"
+                           name="contact" value="email">
                 </div>
                 <div class="risk-profile">
                     <label>Risk profile</label>
